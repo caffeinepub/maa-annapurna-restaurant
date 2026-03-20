@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Warm cream/parchment background */
+    --background: 0.955 0.022 85;
+    /* Deep brown text */
+    --foreground: 0.22 0.04 50;
+
+    --card: 0.965 0.018 80;
+    --card-foreground: 0.22 0.04 50;
+    --popover: 0.965 0.018 80;
+    --popover-foreground: 0.22 0.04 50;
+
+    /* Gold accent as primary */
+    --primary: 0.68 0.12 72;
+    --primary-foreground: 0.14 0.03 50;
+
+    --secondary: 0.93 0.025 80;
+    --secondary-foreground: 0.22 0.04 50;
+
+    --muted: 0.93 0.02 80;
+    --muted-foreground: 0.5 0.03 60;
+
+    --accent: 0.68 0.12 72;
+    --accent-foreground: 0.14 0.03 50;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.82 0.04 75;
+    --input: 0.82 0.04 75;
+    --ring: 0.68 0.12 72;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.97 0.015 80;
+    --sidebar-foreground: 0.22 0.04 50;
+    --sidebar-primary: 0.68 0.12 72;
+    --sidebar-primary-foreground: 0.14 0.03 50;
+    --sidebar-accent: 0.93 0.025 80;
+    --sidebar-accent-foreground: 0.22 0.04 50;
+    --sidebar-border: 0.82 0.04 75;
+    --sidebar-ring: 0.68 0.12 72;
+
+    /* Restaurant-specific tokens */
+    --restaurant-gold: 0.68 0.12 72;
+    --restaurant-dark: 0.18 0.04 50;
+    --restaurant-cream: 0.955 0.022 85;
+    --restaurant-tan: 0.82 0.045 72;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: "Playfair Display", serif;
+  }
+
+  .text-gold {
+    color: oklch(var(--restaurant-gold));
+  }
+
+  .bg-cream {
+    background-color: oklch(var(--restaurant-cream));
+  }
+
+  .bg-dark-brown {
+    background-color: oklch(var(--restaurant-dark));
+  }
+
+  .border-gold {
+    border-color: oklch(var(--restaurant-gold));
+  }
+
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: oklch(var(--restaurant-gold));
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+}
